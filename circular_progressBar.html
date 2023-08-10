@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body style="text-align:center">
+
+<h3>Case where percentage is x &gt; 50%</h3> <br>
+1. From percentage X substract 50 <br>
+2. Multiply the result by 3.6  <br>
+3. Add it to the degrees of the 100% keyframe <br>
+<b>Formula (X - 50)*3.6</b><br>
+For example the percentage 83%:
+(83 - 50) * 3.6 =>
+33 * 3.6 => 118.8 <br><br>
+<svg width="102" height="102" style="zoom:140%;">
+	<style>
+		.r83 { animation: sf84 1s ease-out 0s forwards; transform-origin: 50% 50%;}
+		@keyframes sf84 
+		{0% {transform: rotate(0);}
+		100% {transform: rotate(118.8deg);}}
+	</style>
+	<!-- Blue ciel circle indicating the full rotation -->
+	<circle cx="51" cy="51" r="41" stroke="#3FFF" stroke-width="20"></circle>
+	<!-- This arch is on the right side of the shape staying stable -->
+	<path d="M51,0 a1,1 4 0,1 0,101" fill="blue"></path>
+	<!-- This arch is changing if the percentage is less than 50 -->
+	<path d="M51,0 a1,1 4 0,1 0,101" class="r83" fill="blue"></path>
+	<!-- white circle in the middle on top of the arches -->
+	<circle cx="51" cy="51" r="40" fill="#FFF"></circle>
+	<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">83%</text>
+	<!-- white circle around the shape because the arches dont rotate perfectly an some pixels show up outside the shape -->
+	<circle cx="51" cy="51" r="51" stroke="#FFF" stroke-width="2" fill-opacity="0"></circle>
+</svg>
+
+
+
+<h3>Case where percentage is x &lt; 50%</h3> <br>
+1. Multiply the percentage X by 3.6  <br>
+3. Add it to the degrees of the 100% keyframe <br>
+<b>Formula  X*3.6</b><br>
+For example the percentage 7%: 7 * 3.6 => 25.2<br><br>
+<svg width="102" height="102" style="zoom:140%;">
+	<style>
+		#r7 {
+		animation: sf 1s ease-out 0s forwards;
+		transform-origin: 50% 50%;
+		}
+		@keyframes sf {
+			0% {transform: rotate(0);}
+			100% {transform: rotate(25.2deg);}
+		}
+	</style>
+	<circle cx="51" cy="51" r="41" stroke="#3FFF" stroke-width="20"/>
+	<path d="M51,0 a1,1 4 0,1 0,101" fill="blue"/>
+	<!-- This arch is changing if the percentage is greater than 50 -->
+	<path d="M51,0 a1,1 4 0,1 0,101" id="r7"  fill="#3FFF" stroke="#3FFF" stroke-width="1"/>
+	<circle cx="51" cy="51" r="40" fill="#FFF"/>
+	<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">7%</text>
+	<circle cx="51" cy="51" r="51" stroke="#FFF" stroke-width="2" fill-opacity="0"/>  
+</svg>
+<p style="width: 65%; margin: auto;">
+<i>Note</i>: The animation starts from 50 percent in the first case. I want the code to have the minimum amount of lines so I will keep it this way unless there is  a clever way to fix this.
+</p>
+
+</body>
+</html>
+

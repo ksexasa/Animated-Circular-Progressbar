@@ -1,0 +1,8 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="102" width="102">
+    <circle cx="51" cy="51" r="41" stroke="#3FFF" stroke-width="20"/>
+  <path d="M51,0 a1,1 4 0,1 0,101" fill="blue"/>
+  <path d="M51,1 a1,1 4 0,1 0,101" id="r2"  fill="blue" />
+  <circle cx="51" cy="51" r="40" fill="#FFF"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">50%</text>
+  <circle cx="51" cy="51" r="51" stroke="#FFF" stroke-width="2" fill-opacity="0"/>  
+</svg>
